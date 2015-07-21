@@ -1,0 +1,61 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jun 22, 2015, 10:30:42 PM
+    Author     : Dhanushka Madushan
+*/
+body{
+    background-color:#D5E9FF;
+}
+div.userhome-upper{
+    background:#f6f6f6;
+    width:960px;
+    margin-left:auto;
+    margin-right: auto;
+    box-shadow:0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+div.userhome-design{
+    background:#f6f6f6;
+    width:1350px;
+    margin-left:auto;
+    margin-right: auto;
+    box-shadow:0 5px 10px rgba(0, 0, 0, 0.1);
+}
+div.form_container-design{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width:1340px;
+    margin-left:auto;
+    margin-right: auto;
+}
+div.form_container{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width:800px;
+    margin-left:auto;
+    margin-right: auto;
+}
+hr{
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+.element_margin{
+    border-radius: 5px;
+    border: 2px solid #099;
+    padding: 20px; 
+    width: 50%;
+    height: 80%; 
+    border-style: dashed;
+}
+div.element_margin2{
+    border-radius: 5px;
+    border: 2px solid #099;
+    padding: 10px; 
+    width: 10px;
+    height: 50px; 
+}
+

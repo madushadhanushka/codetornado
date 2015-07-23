@@ -3,7 +3,8 @@
         <div class="row">
             <div class="col-sm-9" style="width:100%">
                 <div class="panel panel-default"">
-                    <div class="panel-heading">Design Page</div>
+                    <div class="panel-heading">Design Page <?php echo $page_detail['page_data'][0]->name ?>
+                        <input type="button" value="Save" onclick="savePage()" class="btn btn-primary" /></div>
                 </div>
                 <div class="row">
                     <div class="col-xs-8 col-sm-6" style="width: 20%">
@@ -56,7 +57,14 @@
                             <div class="panel-heading">Page Preview</div>
                             <div class="panel-body">
                                 <div id="canvas" ondrop="dropNewElement(event, 'canvas')"  ondragover="allowDrop(event)" style="width: 1050px;min-height: 100px">
+                                    <?php
+                                    if (isset($page_detail['page_xml'])) {
+                                        $xml = simplexml_load_string($page_detail['page_xml']);
+                                        $xml_string = $xml->view->asXML();
+                                        echo str_replace("<view>", "", $xml_string);
+                                        ?>
 
+<?php } ?>
 
                                 </div>
                             </div>
@@ -216,20 +224,21 @@ function hello(){
 <h4><div id="div_status_window" class="label label-success" style="position: absolute;bottom: 0px; left: 0px;"></div></h4>
 <div id="final_html_script" ></div>
 <div class="btn-group">
-  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Action <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu">
-    <li><a href="#">Action</a></li>
-    <li><a href="#">Another action</a></li>
-    <li><a href="#">Something else here</a></li>
-    <li role="separator" class="divider"></li>
-    <li><a href="#">Separated link</a></li>
-  </ul>
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Action <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li>
+        <li><a href="#">Something else here</a></li>
+        <li role="separator" class="divider"></li>
+        <li><a href="#">Separated link</a></li>
+    </ul>
 </div>
 <script lang="javascript">
     $('#div_edit_window').hide();
     $('#div_event_edit_window').hide();
+    var xmlDoc;                     // store all page information as xml doc file
     var elementCount = 0;
     var currentElementType;         // current draging element type
     var currentElementID;           // element ID for change properties of added element
@@ -260,28 +269,26 @@ function hello(){
                 var proxy_element = document.getElementById(parent_element_ID);
                 var element = createNewElement("row_layout", parent_element_ID, "row element_margin", 'div');
                 proxy_element.appendChild(element);
-                $('#' + element.id).on("drop", {element_ID: element.id}, dropNewElementTo);
+
                 //dropEvent(element,"drop",drop(event,element.id));
                 //document.getElementById("name").className = "btn btn-primary";
             } else if (currentElementType == "column_layout") {
                 var proxy_element = document.getElementById(parent_element_ID);
                 var element = createNewElement("column_layout", parent_element_ID, "col-xs-8 col-sm-6 element_margin", 'div');
                 proxy_element.appendChild(element);
-                $('#' + element.id).on("drop", {element_ID: element.id}, dropNewElementTo);
             } else if (currentElementType == "form") {
                 var proxy_element = document.getElementById(parent_element_ID);
                 var element = createNewElement("form", parent_element_ID, "form-horizontal form_container element_margin", 'form');
                 proxy_element.appendChild(element);
-                $('#' + element.id).on("drop", {element_ID: element.id}, dropNewElementTo);
             } else if (currentElementType == "textbox") {
                 var proxy_element = document.getElementById(parent_element_ID);
                 var element = createNewElement("textbox", parent_element_ID, "form-control", 'text');
                 proxy_element.appendChild(element);
-                $('#' + element.id).on("drop", {element_ID: element.id}, dropNewElementTo);
             }
-            $('#' + element.id).on("click", {element_ID: element.id}, editElement);
+            $('#' + element.id).on("drop", {element_ID: element.id}, dropNewElementTo);
+            $('#' + element.id).on("dblclick", {element_ID: element.id}, editElement);
             $('#' + element.id).on("drag", {element_ID: element.id}, dragElement);
-            $('#' + element.id).on("mouseover", {element_ID: element.id,element_type: currentElementType}, moveOnElement);
+            $('#' + element.id).on("mouseover", {element_ID: element.id, element_type: currentElementType}, moveOnElement);
             $('#' + element.id).on("mouseout", {element_ID: element.id}, mouseOutElement);
         } else {
             var proxy_element = document.getElementById(parent_element_ID);
@@ -296,10 +303,10 @@ function hello(){
 
     }
     function moveOnElement(event) {
-        var str=$('#div_status_window').html();
-        $('#div_status_window').html(" <span class='glyphicon glyphicon-arrow-right' aria-hidden='true'></span> "+event.data.element_ID+"("+event.data.element_type+")"+str);
+        var str = $('#div_status_window').html();
+        $('#div_status_window').html(" <span class='glyphicon glyphicon-arrow-right' aria-hidden='true'></span> " + event.data.element_ID + "(" + event.data.element_type + ")" + str);
     }
-    function mouseOutElement(event){
+    function mouseOutElement(event) {
         $('#div_status_window').html("");
     }
     function createNewElement(element_type, parent_element_ID, className, element_HTML_type) {
@@ -371,6 +378,73 @@ function hello(){
         $('#div_event_edit_window').hide();
         $('#li_properties').toggleClass("active");
         $('#li_event').toggleClass("active");
+    }
+    var xmlElement;
+    function savePage() {
+        var createdView = "<view>" + $('#canvas').html().replace(/\s\s+/g, "") + "</view>";
+        xmlElement = stringToXml(createdView);
+        deletedTag = xmlDoc.getElementsByTagName("view")[0];
+        xmlDoc.documentElement.removeChild(deletedTag);
+        xmlDoc.getElementsByTagName("module")[0].appendChild(xmlElement.getElementsByTagName("view")[0]);
+        //xmlDoc.getElementsByTagName("module")[0].appendChild(xmlElement);
+        //console.log(xmlDoc.getElementsByTagName("view")[0].childNodes[0].innerHTML);
+        console.log(xmlDoc);
+        var postXMLDoc = xmlToString(xmlDoc);
+        $.getJSON("<?php echo base_url('index.php/Main/savePage') ?>", {xml:postXMLDoc,page_ID:<?php echo $page_detail['page_data'][0]->page_ID ?>}, savePageResult);
+    }
+    function savePageResult(json) {
+        if (json[0] == 1) {                 // save page complete
+            alert('sucess');
+        }
+    }
+<?php if (isset($page_detail['page_xml'])) { ?>
+        createFromXMLObject();
+        function createFromXMLObject() {
+            xmlDoc = stringToXml('<?php echo $page_detail["page_xml"] ?>');
+        }
+<?php } else { ?>
+        createNewXMLObject();
+        function createNewXMLObject() {
+            txt = "<module>";
+            txt += "<detail>";
+            txt += "<name><?php echo $page_ID ?></name>";
+            txt += "<description></description>";
+            txt += "</detail>";
+            txt += "<view>";
+            txt += "</view>";
+            txt += "<control>";
+            txt += "</control>";
+            txt += "</module>";
+
+            xmlDoc = stringToXml(txt);
+            alert(xmlDoc.getElementsByTagName("name")[0].childNodes[0].nodeValue);
+
+        }
+<?php } ?>
+    function xmlToString(thexml) {
+        if (thexml.xml) {
+
+            xmlString = thexml.xml;
+        } else {
+
+            xmlString = (new XMLSerializer).serializeToString(thexml);
+        }
+        return xmlString;
+    }
+    function stringToXml(txt) {
+        if (window.DOMParser)
+        {
+            parser = new DOMParser();
+            xmlDocument = parser.parseFromString(txt, "text/xml");
+        }
+        else
+        {
+            xmlDocument = new ActiveXObject("Microsoft.XMLDOM");
+            xmlDocument.async = false;
+            xmlDocument.loadXML(txt);
+        }
+        return xmlDocument;
+
     }
 </script>
 

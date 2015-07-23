@@ -1,10 +1,11 @@
 <div class="userhome-upper">
     <div class="form_container">
+        <?php echo $username; ?>
         <h3>Pages</h3>
         <input type="button" value="Add new page"  class="btn btn-primary" />
         <table  class="table">
     <th>ID</th>
-    <th>Cutomer Name</th>
+    <th>Title</th>
     <th>edit</th>
     
 <?php if (isset($page_detail)) {

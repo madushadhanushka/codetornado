@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="TestCase" file="C:\wamp\www\uni\abc\CodeIgniter-3.0.0\application\tests\TestCase.php" tests="2" assertions="2" failures="0" errors="0" time="0.022568">
+    <testcase name="testUserLogin1" class="TestCase" file="C:\wamp\www\uni\abc\CodeIgniter-3.0.0\application\tests\TestCase.php" line="12" assertions="1" time="0.014820"/>
+    <testcase name="testUserLogin2" class="TestCase" file="C:\wamp\www\uni\abc\CodeIgniter-3.0.0\application\tests\TestCase.php" line="19" assertions="1" time="0.007748"/>
+  </testsuite>
+</testsuites>

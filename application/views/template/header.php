@@ -13,6 +13,9 @@
     <title>CodeTornado <?php echo $page_title ?> </title>
     <link href="<?php echo base_url('public/css/bootstrap.min.css') ?>" rel="stylesheet">
     <link href="<?php echo base_url('public/css/site.css') ?>" rel="stylesheet">
+    <link href="<?php echo base_url('public/css/editview.css') ?>" rel="stylesheet">
     <script src="<?php echo base_url('/public/js/jquery-1.11.3.min.js') ?>"></script>
+    <script src="<?php echo base_url('/public/js/bootstrap.min.js') ?>"></script>
     <body>
+        <div style="min-height:100%">
 

@@ -2,6 +2,8 @@
     <div class="form_container">
         <form method="post" action="<?php echo base_url('index.php/install/installDetail') ?>" class="form-horizontal">
             <h3>Database details</h3>
+            <?php if (isset($formerror)) { ?><span class="help-block"><?php echo $formerror ?></span><?php } ?>
+                        <?php if (isset($formerror)) { ?>    </div><?php } ?>
             <div class="form-group">
                 <?php if (isset($formerror_hostname)) { ?><div class="form-group has-error"><?php } ?>
                     <label for="inputEmail" class="control-label col-xs-2">Host name</label>

@@ -3,18 +3,20 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/wamp/www/uni/abc/CodeIgniter-3.0.0/application/controllers/Install.php</file>
-            <file>file:/C:/wamp/www/uni/abc/CodeIgniter-3.0.0/public/css/site.css</file>
-            <file>file:/C:/wamp/www/uni/abc/CodeIgniter-3.0.0/application/models/account_model.php</file>
+            <file>file:/C:/wamp/www/uni/abc/CodeIgniter-3.0.0/application/views/install/AccountDetail.php</file>
+            <file>file:/C:/wamp/www/uni/abc/CodeIgniter-3.0.0/application/views/misc/login.php</file>
+            <file>file:/C:/wamp/www/uni/abc/CodeIgniter-3.0.0/application/views/account/changeAccount.php</file>
+            <file>file:/C:/wamp/www/uni/abc/CodeIgniter-3.0.0/application/views/account/createAccount.php</file>
+            <file>file:/C:/wamp/www/uni/abc/CodeIgniter-3.0.0/application/views/account/allaccount.php</file>
+            <file>file:/C:/wamp/www/uni/abc/CodeIgniter-3.0.0/data/page/4.xml</file>
+            <file>file:/C:/wamp/www/uni/abc/CodeIgniter-3.0.0/application/controllers/Page.php</file>
+            <file>file:/C:/wamp/www/uni/abc/CodeIgniter-3.0.0/application/views/template/footer.php</file>
+            <file>file:/C:/wamp/www/uni/abc/CodeIgniter-3.0.0/public/css/editview.css</file>
+            <file>file:/C:/wamp/www/uni/abc/CodeIgniter-3.0.0/application/views/misc/createpage.php</file>
+            <file>file:/C:/wamp/www/uni/abc/CodeIgniter-3.0.0/application/views/template/header.php</file>
             <file>file:/C:/wamp/www/uni/abc/CodeIgniter-3.0.0/application/views/design/homepage.php</file>
             <file>file:/C:/wamp/www/uni/abc/CodeIgniter-3.0.0/application/controllers/Welcome.php</file>
-            <file>file:/C:/wamp/www/uni/abc/CodeIgniter-3.0.0/application/views/install/AccountDetail.php</file>
-            <file>file:/C:/wamp/www/uni/abc/CodeIgniter-3.0.0/application/controllers/Account.php</file>
-            <file>file:/C:/wamp/www/uni/abc/CodeIgniter-3.0.0/application/controllers/Main.php</file>
-            <file>file:/C:/wamp/www/uni/abc/CodeIgniter-3.0.0/application/views/install/Installsuccess.php</file>
-            <file>file:/C:/wamp/www/uni/abc/CodeIgniter-3.0.0/application/views/account/LoginPage.php</file>
-            <file>file:/C:/wamp/www/uni/abc/CodeIgniter-3.0.0/application/models/main_model.php</file>
-            <file>file:/C:/wamp/www/uni/abc/CodeIgniter-3.0.0/application/views/design/designpage.php</file>
+            <file>file:/C:/wamp/www/uni/abc/CodeIgniter-3.0.0/data/page/1.xml</file>
         </group>
     </open-files>
 </project-private>

@@ -1,1 +1,25 @@
-<?xml version="1.0" encoding="UTF-8"?><module><detail><name>module name</name><description>little discription about module</description></detail><control><event><action>action type eg: click, submit, mouse move etc.</action><element_id>element id for the given event</element_id><code>code for the given action in PHP language</code></event><event><action>second event</action><element_id>element id for the second event</element_id><code>code for the second event in PHP language</code></event></control><view><div>test</div><div id="element0" draggable="true" class="row element_margin"><div id="element2" draggable="true" class="col-xs-8 col-sm-6 element_margin"/><div id="element1" draggable="true" class="col-xs-8 col-sm-6 element_margin"/></div></view></module>
+<module> <detail><name>test page</name> <description>initial page to test page</description> </detail> <control>echo "telskd";<event><action>click</action><element_id>element7</element_id><code>false</code></event><event><action>click</action><element_id>element5</element_id><code>false</code></event><event><action>click</action><element_id>element6</element_id><code>false</code></event><event><action>click</action><element_id>element2</element_id><code>false</code></event><event><action>click</action><element_id>element3</element_id><code>false</code></event><event><action>click</action><element_id>element1</element_id><code>false</code></event><event><action>click</action><element_id>element0</element_id><code>false</code></event><event><action>click</action><element_id>element4</element_id><code>false</code></event></control> <view><!--ct><div id="ele0" draggable="true" class="row element_margin element ct_color" style="width: 1080px; height: 500px; margin-top: 0px; margin-right: -15px; margin-left: -15px; padding-top: 20px; padding-right: 20px; padding-left: 20px;">
+<div id="ele1" draggable="true" class="col-xs-8 col-sm-6 element_margin element ct_color" style="width: 311px; height: 450px; margin-top: 0px; margin-right: 0px; margin-left: 0px; padding-top: 20px; padding-right: 20px; padding-left: 20px;">
+<div id="ele3" draggable="true" class="row element_margin inner_html element" style="width: 297px; height: 271px; margin-top: 0px; margin-right: -15px; margin-left: -15px; padding-top: 20px; padding-right: 20px; padding-left: 20px;">
+<p style="text-align: center;">
+<span style="color:#FFD700">
+<span style="font-size:28px">
+<strong><span style="background-color:#FF8C00">This is test</span></strong>
+</span>
+</span>
+</p>
+<p>
+<span style="font-size:12px">this is test</span></p>
+</div>
+<div id="ele8" draggable="true" class="row element_margin element ct_php" style="width: 297px; height: 44px; margin-top: 0px; margin-right: -15px; margin-left: -15px; padding-top: 20px; padding-right: 20px; padding-left: 20px;"><?php
+echo "hello";
+?></div>
+</div>
+<div id="ele2" draggable="true" class="col-xs-8 col-sm-6 element_margin element ct_color" style="width: 725px; height: 450px; margin-top: 0px; margin-right: 0px; margin-left: 0px; padding-top: 20px; padding-right: 20px; padding-left: 20px;">
+<form id="ele4" draggable="true" class="form-horizontal form_container element_marginelement ct_form ct_color ct_name" style="">
+<input id="ele5" draggable="true" class="form-control element ct_name" type="text" style="">
+<input id="ele6" draggable="true" class="form-control element ct_name" type="text" style="">
+<input id="ele7" draggable="true" class="btn btn-primary element ct_name" type="button" value="click me" style="width: 66px; height: 34px; margin-top: 0px; margin-right: 0px; margin-left: 0px; padding-top: 6px; padding-right: 12px; padding-left: 12px;" name="click me">
+</form>
+</div>
+</div></ct--></view></module>

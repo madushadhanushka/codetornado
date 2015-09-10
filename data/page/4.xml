@@ -1,0 +1,8 @@
+<module>
+    <detail>
+        <name>about</name>
+        <description>this is about page</description>
+    </detail>
+    <control> </control>
+    <view> </view>
+</module>

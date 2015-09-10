@@ -9,6 +9,7 @@ and open the template in the editor.
 */
 body{
     background-color:#D5E9FF;
+    @import "site.css";
 }
 div.userhome-upper{
     background:#f6f6f6;
@@ -43,19 +44,15 @@ hr{
     margin-top: 5px;
     margin-bottom: 0px;
 }
-.element_margin{
-    border-radius: 5px;
-    border: 2px solid #099;
-    padding: 20px; 
-    width: 50%;
-    height: 80%; 
-    border-style: dashed;
-}
+
 div.element_margin2{
     border-radius: 5px;
     border: 2px solid #099;
     padding: 10px; 
     width: 10px;
     height: 50px; 
+}
+div.hide_div{
+    display: none;
 }
 

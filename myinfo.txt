@@ -1,0 +1,11 @@
+function removeElement(divNum) {
+
+  var d = document.getElementById('myDiv');
+
+  var olddiv = document.getElementById(divNum);
+
+  d.removeChild(olddiv);
+
+}
+
+ct_form: method,action

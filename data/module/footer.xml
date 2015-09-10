@@ -1,0 +1,26 @@
+<module><detail><name>footer</name><description>footer for common applicaition</description></detail><view> 
+<!--ct>
+    <footer id="footer_main" class=" element_margin element footer-basic-centered" style="background-color:#242727"  draggable="true">
+        <font style="color:#D4D4D4">
+            <center>
+			<p id="footer_title" class="footer-company-motto element_margin element inner_html" draggable="true">The company motto.</p>
+
+			<p class="footer-links" draggable="true">
+				<a id="link_home" class="element_margin element ct_link"><span id="footer_span_home" class="element_margin element inner_html" draggable="true">HOME</span></a>
+				·
+				<a id="link_service" class="element_margin element ct_link"><span id="footer_span_service" class="element_margin element inner_html" draggable="true">SERVICES</span></a>
+				·
+				<a id="link_portfolio" class="element_margin element ct_link"><span id="footer_span_portfolio" class="element_margin element inner_html" draggable="true">PORTFOLIO</span></a>
+				·
+				<a id="link_price" class="element_margin element ct_link"><span id="footer_span_pricing" class="element_margin element inner_html" draggable="true">PRICING</span></a>
+				·
+			</p>
+
+                                <p id="footer_compname" class="footer-company-name element_margin element" draggable="true">Company Name &copy; 2015</p>
+                                    </center>
+        </font>
+    </footer>
+</ct-->
+    </view>
+    <control> </control>
+</module>

@@ -1,6 +1,7 @@
 <?php
 
-session_start();
+// this controller handle request comes to the index page
+
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Welcome extends CI_Controller {
@@ -29,21 +30,29 @@ class Welcome extends CI_Controller {
     }
 
     public function index() {
-        if (!isset($_SESSION['user_id'])) {
-            header("location:" . base_url('index.php/Account/showloginpage'));
-        } else if (file_exists("data/install/installdetail.xml")) {
-            $xml = simplexml_load_file("data/install/installdetail.xml");
-            if ($xml === false) {            // check xml file load
-                log_message('error', 'xml functional error');
-                die("xml functional error. please reinstall again");
-            }
-            header("location:" . base_url('index.php/Main/homepage'));
-            echo $xml->host;
-        } else {
+        // this section check whether user is already login, not logged or not install application
+
+
+        if (!file_exists("data/install/installdetail.xml")) {
             $data['page_title'] = "install CodeTornado";
             $this->load->view('template/header.php', $data);
             $this->load->view('install/AccountDetail.php', $data);
             $this->load->view('template/footer.php');
+        } else {
+            // if data not in the installdetail.xml file then redirect to install page
+            $this->load->model('page_model');
+            $indexPage = $this->page_model->getIndexPage();
+            header("location:".base_url('index.php/page/preview?page_id=').$indexPage);
+            /*
+            $pageData = $this->page_model->getPreviewPage($indexPage);
+            $data['html_code'] = $pageData['html'];
+            $this->page_model->setPreviewPage($pageData['html']);
+            $data['page_title'] = $pageData['title'];
+            $this->load->view('template/bootstrap/header.php', $data);
+            $this->load->view('design/preview.php', $data);
+            $this->load->view('template/bootstrap/footer.php');
+             
+             */
         }
 
         //$this->load->view('welcome_message');

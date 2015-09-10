@@ -1,0 +1,29 @@
+<module>
+    <detail>
+        <name>header</name>
+        <description>header for html page</description>
+    </detail>
+    <view>
+        
+ <!--ct>
+<div id="header" class="navbar navbar-inverse element_margin element" draggable="true">
+        <div class="container element_margin element" id="header_container" draggable="true">
+            <div class="navbar-header">
+                
+                <a class="navbar-brand ct_link"  id="header_nav"><div id="header_logo" class="row element_margin inner_html element" draggable="true">Your logo</div></a>
+            </div>
+            <div class="navbar-collapse collapse" id="header_menu element_margin element" draggable="true">
+                <ul class="nav navbar-nav">
+                    <li><a id="header_home" class="element_margin element ct_link" draggable="true"><span id="span_home" class="element_margin element inner_html" draggable="true">HOME</span></a></li>
+                     <li><a id="header_service" class="element_margin element ct_link" draggable="true"><span id="span_service" class="element_margin element inner_html" draggable="true">SERVICES</span></a></li>
+                    <li><a id="header_port" class="element_margin element ct_link" draggable="true"><span id="span_portfolio" class="element_margin element inner_html" draggable="true">PORTFOLIO</span></a></li>
+                    <li><a id="header_price" class="element_margin element ct_link" draggable="true"><span id="span_price" class="element_margin element inner_html" draggable="true">PRICING</span></a></li>
+                </ul>
+            </div>
+           
+        </div>
+    </div>
+    </ct-->
+    </view>
+    <control> </control>
+</module>
